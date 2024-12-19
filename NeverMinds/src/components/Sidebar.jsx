@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import logo from "../assets/logo.jpg"; // Ensure this path is correct
+import logo from "../assets/logo.jpg";
 
 const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isQuizzesOpen, setIsQuizzesOpen] = useState(false);
 
-  // Toggle sidebar visibility
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  // Toggle quizzes sub-menu visibility
   const toggleQuizzes = () => {
     setIsQuizzesOpen(!isQuizzesOpen);
   };
@@ -23,14 +21,12 @@ const Sidebar = () => {
         onClick={toggleSidebar}
       >
         {!isSidebarOpen ? (
-          // Hamburger Icon
           <div className="space-y-2">
             <span className="block w-8 h-1 bg-black rounded"></span>
             <span className="block w-8 h-1 bg-yellow-400 rounded"></span>
             <span className="block w-8 h-1 bg-black rounded"></span>
           </div>
         ) : (
-          // Close Icon
           <div className="text-3xl font-bold">×</div>
         )}
       </div>
@@ -51,7 +47,10 @@ const Sidebar = () => {
                   alt="Logo"
                   className="w-10 h-10 rounded-full shadow-md border-2 border-yellow-400"
                 />
-                <span className="text-lg font-bold text-yellow-400 tracking-wide">
+                <span
+                  className="text-lg font-bold text-yellow-400 tracking-wide"
+                  style={{ fontFamily: "'Kulim Park', sans-serif" }}
+                >
                   NeverMinds
                 </span>
               </div>
@@ -65,15 +64,18 @@ const Sidebar = () => {
 
             {/* Navigation Links */}
             <ul className="mt-6 space-y-4 px-6">
-              <li className="flex items-center gap-4 py-3 px-3 hover:bg-[rgba(255,255,255,0.1)] rounded-lg cursor-pointer transition-all">
+              <li
+                className="flex items-center gap-4 py-3 px-3 hover:bg-[rgba(255,255,255,0.1)] rounded-lg cursor-pointer transition-all"
+                style={{ fontFamily: "'Parkin Sans', sans-serif" }}
+              >
                 🏠 <span className="text-lg font-medium">Home</span>
               </li>
 
-              {/* Quizzes with Sub-Menu */}
               <li className="flex flex-col">
                 <div
                   className="flex items-center gap-4 py-3 px-3 hover:bg-[rgba(255,255,255,0.1)] rounded-lg cursor-pointer transition-all"
                   onClick={toggleQuizzes}
+                  style={{ fontFamily: "'Parkin Sans', sans-serif" }}
                 >
                   📝 <span className="text-lg font-medium">Quizzes</span>
                   <span
@@ -96,14 +98,20 @@ const Sidebar = () => {
                 )}
               </li>
 
-              <li className="flex items-center gap-4 py-3 px-3 hover:bg-[rgba(255,255,255,0.1)] rounded-lg cursor-pointer transition-all">
+              <li
+                className="flex items-center gap-4 py-3 px-3 hover:bg-[rgba(255,255,255,0.1)] rounded-lg cursor-pointer transition-all"
+                style={{ fontFamily: "'Parkin Sans', sans-serif" }}
+              >
                 🙍‍♂️ <span className="text-lg font-medium">My Profile</span>
               </li>
             </ul>
 
             {/* Logout Button */}
             <div className="mt-auto px-6 py-4 bg-[rgba(0,0,0,0.8)]">
-              <button className="flex items-center gap-4 w-full text-lg font-medium text-white hover:text-yellow-400 transition-all">
+              <button
+                className="flex items-center gap-4 w-full text-lg font-medium text-white hover:text-yellow-400 transition-all"
+                style={{ fontFamily: "'Kulim Park', sans-serif" }}
+              >
                 🚪 <span>Logout</span>
               </button>
             </div>

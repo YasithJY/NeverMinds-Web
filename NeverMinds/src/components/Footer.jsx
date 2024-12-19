@@ -1,36 +1,44 @@
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import React from "react";
+import background from "../assets/bk1.jpg";
 
-const Footer = () => (
-  <footer className="py-8 bg-gradient-to-r from-[#FFD448] to-[#FFD448] text-soft-pearl">
-    <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6">
-      {/* Footer Text */}
-      <p className="text-center text-sm md:text-left">
-        © {new Date().getFullYear()} NeverMinds. All rights reserved.
-      </p>
-
-      {/* Social Media Icons */}
-      <div className="flex space-x-6 mt-4 md:mt-0">
+const Hero = () => {
+  return (
+    <section
+      className="relative bg-cover bg-center h-screen text-white"
+      style={{
+        backgroundImage: `url(${background})`,
+      }}
+    >
+      {/* Content Container */}
+      <div className="absolute bottom-0 left-0 w-full p-8 bg-black bg-opacity-20 text-center">
         <a
-          href="#"
-          className="text-soft-pearl hover:text-dandelion-yellow transition duration-300 transform hover:scale-110"
+          href="/quizzes"
+          className="mt-6 inline-block px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-black font-bold rounded-lg transition"
+          aria-label="Explore our quizzes"
+          style={{ fontFamily: "'Kulim Park', sans-serif" }}
         >
-          <FaFacebookF size={20} />
+          Explore Our Quizzes
         </a>
-        <a
-          href="#"
-          className="text-soft-pearl hover:text-dandelion-yellow transition duration-300 transform hover:scale-110"
+        <p
+          className="mt-4 text-lg sm:text-xl"
+          style={{ fontFamily: "'Parkin Sans', sans-serif" }}
         >
-          <FaInstagram size={20} />
-        </a>
-        <a
-          href="#"
-          className="text-soft-pearl hover:text-dandelion-yellow transition duration-300 transform hover:scale-110"
-        >
-          <FaTwitter size={20} />
-        </a>
+          Access quizzes anytime, anywhere, and start learning in a fun and interactive way!
+        </p>
       </div>
-    </div>
-  </footer>
-);
 
-export default Footer;
+      {/* Footer Section */}
+      <footer
+        className="absolute bottom-0 left-0 w-full py-4 text-center text-black"
+        style={{
+          backgroundColor: "#FFD448",
+          fontFamily: "'Kulim Park', sans-serif",
+        }}
+      >
+        © {new Date().getFullYear()} Fun Learning Platform. All Rights Reserved.
+      </footer>
+    </section>
+  );
+};
+
+export default Hero;
