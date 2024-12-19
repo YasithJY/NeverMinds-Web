@@ -21,14 +21,14 @@ const Team = () => {
             <span className="text-yellow-400">Fun</span> Learning?
           </h2>
           <p
-            className="mt-6 text-lg sm:text-2xl text-gray-700 max-w-lg"
+            className="mt-6 text-lg sm:text-2xl text-gray-700 max-w-lg text-center"
             style={{ fontFamily: "'Parkin Sans', sans-serif" }}
           >
             We are a team of young minds, aiming to revolutionize education and
             make learning a fun adventure for you!
           </p>
           <p
-            className="mt-6 text-lg sm:text-2xl text-gray-700 max-w-lg"
+            className="mt-6 text-lg sm:text-2xl text-gray-700 max-w-lg text-center"
             style={{ fontFamily: "'Parkin Sans', sans-serif" }}
           >
             With innovation and empathy at our core, we strive to make learning

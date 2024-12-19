@@ -1,44 +1,48 @@
-import React from "react";
-import background from "../assets/bk1.jpg";
+import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 
-const Hero = () => {
-  return (
-    <section
-      className="relative bg-cover bg-center h-screen text-white"
-      style={{
-        backgroundImage: `url(${background})`,
-      }}
-    >
-      {/* Content Container */}
-      <div className="absolute bottom-0 left-0 w-full p-8 bg-black bg-opacity-20 text-center">
-        <a
-          href="/quizzes"
-          className="mt-6 inline-block px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-black font-bold rounded-lg transition"
-          aria-label="Explore our quizzes"
-          style={{ fontFamily: "'Kulim Park', sans-serif" }}
-        >
-          Explore Our Quizzes
-        </a>
-        <p
-          className="mt-4 text-lg sm:text-xl"
-          style={{ fontFamily: "'Parkin Sans', sans-serif" }}
-        >
-          Access quizzes anytime, anywhere, and start learning in a fun and interactive way!
-        </p>
-      </div>
-
-      {/* Footer Section */}
-      <footer
-        className="absolute bottom-0 left-0 w-full py-4 text-center text-black"
-        style={{
-          backgroundColor: "#FFD448",
-          fontFamily: "'Kulim Park', sans-serif",
-        }}
+const Footer = () => (
+  <footer
+    className="py-8"
+    style={{
+      backgroundColor: "#FFD448", // Footer background color
+      fontFamily: "'Kulim Park', sans-serif", // Apply Kulim Park for footer
+    }}
+  >
+    <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6">
+      {/* Footer Text */}
+      <p
+        className="text-center text-sm md:text-left text-black"
+        style={{ fontFamily: "'Parkin Sans', sans-serif" }} // Apply Parkin Sans for text
       >
-        © {new Date().getFullYear()} Fun Learning Platform. All Rights Reserved.
-      </footer>
-    </section>
-  );
-};
+        © {new Date().getFullYear()} NeverMinds. All rights reserved.
+      </p>
 
-export default Hero;
+      {/* Social Media Icons */}
+      <div className="flex space-x-6 mt-4 md:mt-0">
+        <a
+          href="#"
+          className="text-black hover:text-white transition duration-300 transform hover:scale-110"
+          aria-label="Facebook"
+        >
+          <FaFacebookF size={20} />
+        </a>
+        <a
+          href="#"
+          className="text-black hover:text-white transition duration-300 transform hover:scale-110"
+          aria-label="Instagram"
+        >
+          <FaInstagram size={20} />
+        </a>
+        <a
+          href="#"
+          className="text-black hover:text-white transition duration-300 transform hover:scale-110"
+          aria-label="Twitter"
+        >
+          <FaTwitter size={20} />
+        </a>
+      </div>
+    </div>
+  </footer>
+);
+
+export default Footer;
