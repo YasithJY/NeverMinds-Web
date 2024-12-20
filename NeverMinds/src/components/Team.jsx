@@ -1,15 +1,47 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import img1 from "../assets/1.jpg";
 import img2 from "../assets/2.jpg";
 import img3 from "../assets/3.jpg";
 import img4 from "../assets/4.jpg";
 
 const Team = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Set visibility to true when the section is in the viewport
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="py-16 px-8">
+    <section
+      className={`py-16 px-8 transition-all duration-700 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+      }`}
+      ref={sectionRef}
+    >
       <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
         {/* Left Section: Heading and Description */}
-        <div className="lg:w-1/2 text-left">
+        <div
+          className={`lg:w-1/2 text-left transition-transform duration-700 ${
+            isVisible ? "scale-100" : "scale-90"
+          }`}
+        >
           <h2
             className="text-4xl sm:text-6xl font-extrabold text-gray-800 leading-tight mb-6"
             style={{ fontFamily: "'Kulim Park', sans-serif" }}
@@ -46,7 +78,12 @@ const Team = () => {
           ].map((member, index) => (
             <div
               key={index}
-              className="relative p-6 bg-white rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-transform duration-300"
+              className={`relative p-6 bg-white rounded-xl shadow-xl transition-transform duration-500 ${
+                isVisible ? "scale-100 opacity-100" : "scale-90 opacity-0"
+              }`}
+              style={{
+                transitionDelay: `${index * 100}ms`, // Stagger animation
+              }}
             >
               {/* Background Highlight */}
               <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-yellow-400 to-transparent opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
