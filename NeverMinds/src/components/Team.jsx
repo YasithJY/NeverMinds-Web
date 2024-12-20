@@ -30,7 +30,7 @@ const Team = () => {
 
   return (
     <section
-      className={`py-16 px-8 transition-all duration-700 ${
+      className={`py-16 px-8 transition-all duration-900 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
       }`}
       ref={sectionRef}
