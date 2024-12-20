@@ -1,6 +1,6 @@
 import Footer from "./components/Footer";
-import Hero from "./components/hero";
-import Sidebar from "./components/sidebar";
+import Hero from "./components/Hero";
+import Sidebar from "./components/Sidebar";
 import Team from "./components/Team";
 
 const App = () => {
